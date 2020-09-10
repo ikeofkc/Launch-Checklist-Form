@@ -81,14 +81,15 @@ window.addEventListener("load",function() {
 
                // Check if ready to roll
                if (fuelLevelInput.value > 10000 && cargoMassInput.value < 10000) {
+                  faultyItems.style.visibility = "visible"; // It wasn't clear on the instructions if the other info should be visible when the shuttle is good to go
                   launchStatus.innerHTML = `Shuttle is ready for launch.`
                   launchStatus.style.color = "green"
                   event.preventDefault();
                }
 
                // Update pilot info
-               document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotNameInput.value} Ready.`
-               document.getElementById("copilotStatus").innerHTML = `Pilot ${copilotNameInput.value} Ready.`
+               document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotNameInput.value} is ready.`
+               document.getElementById("copilotStatus").innerHTML = `Pilot ${copilotNameInput.value} is ready.`
 
                // Validate if fuel is too low and update info     
                if (fuelLevelInput.value < 10000) {
