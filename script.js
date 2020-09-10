@@ -75,13 +75,13 @@ window.addEventListener("load",function() {
             
             // If there is an issue, an alert tells them which fields have problems. 
             if (entryIssues.length > 0) {
-               alert(`Oy! Somfin wrong! Looksy hea mate: ${entryIssues} \n \nRemembeh: Top 2 fields got to be NAMES mate... Levels and mass got to be numbas!`);
+               alert(`Oi! Somfin wrong! Looksy hea mate: ${entryIssues} \n \nRemember: The name fields accept only letters; plus spaces, hyphens, or apostrophies in the middle... Fuel & mass levels have to be numbers!`);
                event.preventDefault();
             } else {
 
                // Check if ready to roll
                if (fuelLevelInput.value > 10000 && cargoMassInput.value < 10000) {
-                  faultyItems.style.visibility = "visible"; // It wasn't clear on the instructions if the other info should be visible when the shuttle is good to go
+                  faultyItems.style.visibility = "visible"; // It only says to make this visible if there is an issue, but found it strange not to include when shuttle is ready, especially since the starter material has some pre-written out positive results.
                   launchStatus.innerHTML = `Shuttle is ready for launch.`
                   launchStatus.style.color = "green"
                   event.preventDefault();
